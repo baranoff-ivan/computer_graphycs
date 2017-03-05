@@ -1,0 +1,6 @@
+# Вырезать кусок видео
+ffmpeg -i input_video.mp4 -ss 32 -c copy -t 15 output_video.mp4
+# Наложить логотип на видео
+ffmpeg -i in.mp4 -i logo.png -filter_complex "[0:v][1:v]overlay=20:20:enable=between(t,2,8)" -c:a copy out.mp4
+# Подписать видео
+ffmpeg -i in.mp4 -vf drawtext="fontfile=ARIAL.TTF: text='I am learning computer graphics!': fontcolor=white: fontsize=24: x=6: y=552" -c:a copy out.mp4

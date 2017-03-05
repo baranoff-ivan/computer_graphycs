@@ -1,1 +1,0 @@
-convert in/figures.svg -resize 50% -depth 8 -background none out/figures.png

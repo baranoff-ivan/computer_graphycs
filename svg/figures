@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" version="1.1">
-   <svg width="400" height="200" >
-      <rect x="1" y="1" width="180" height="180" stroke="grey" stroke-width="2" stroke-dasharray="10 5" fill="tomato"/>
-      <circle cx="309" cy="91" r="90" stroke="grey" stroke-width="2" stroke-dasharray="10 5" fill="lightblue"/>
-      <polygon points="110,199  200,43  290,199" stroke="darkgrey" stroke-width="4" fill="lightgreen"/>
-   </svg>
-</svg>

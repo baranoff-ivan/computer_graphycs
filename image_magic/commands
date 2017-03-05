@@ -1,1 +1,0 @@
-convert source/in.png -resize 50% -auto-level -colorspace sRGB -quality 80 out/out.jpg
