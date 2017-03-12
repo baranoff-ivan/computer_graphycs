@@ -1,0 +1,21 @@
+ffmpeg -i in.mov -c:v h264 -profile:v high -level 4.2 -b:v 5000k -minrate 5000k -maxrate 5000k -bufsize 5000k -s 1280x720 -r 25 -bf 2 -g 13 -strict -2 -c:a aac -b:a 128k -ar 96000 out.mp4
+
+# Кодек H.264 (-c:v h264)
+# Профиль кодека High (-profile:v high)
+# Уровень кодека 4.2 (-level 4.2) 
+# Битрейт (constant bitrate) 5000 кбит/с (-b:v 5000k -minrate 5000k -maxrate 5000k -bufsize 5000k) 
+# Размер 1280х720 (-s 1280х720)
+# 25 кадров в секунду (-r 25)
+# 2 B-кадра (-bf 2)
+# GOP - количество кадров в секунду пополам (-g 13)
+
+# Кодек AAC-LC (-strict -2 -c:a aac)
+# Битрейт 128 кбит/с (-b:a 128k -minrate 128k -maxrate 128k -bufsize 128k)
+# Частота дискретизации 96 кГц (-ar 96000)
+
+# Вырезать кусок видео
+# ffmpeg -i input_video.mp4 -ss 32 -c copy -t 15 output_video.mp4
+# Наложить логотип на видео
+# ffmpeg -i in.mp4 -i logo.png -filter_complex "[0:v][1:v]overlay=20:20:enable=between(t,2,8)" -c:a copy out.mp4
+# Подписать видео
+# ffmpeg -i in.mp4 -vf drawtext="fontfile=ARIAL.TTF: text='I am learning computer graphics!': fontcolor=white: fontsize=24: x=6: y=552" -c:a copy out.mp4
